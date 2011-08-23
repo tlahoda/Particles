@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Particles: Main Page</title>
+<title>Particles: QuadModel.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,10 +35,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,6 +57,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+    </ul>
+  </div>
 </div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -68,18 +73,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('index.html','');
+  initNavTree('QuadModel_8h.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<h1>Particles Documentation</h1>  </div>
+<h1>QuadModel.h</h1>  </div>
 </div>
 <div class="contents">
-</div>
+<a href="QuadModel_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00024"></a>00024 <span class="preprocessor">#ifndef PARTICLE_QUADMODEL_H</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define PARTICLE_QUADMODEL_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;gl/Primitive.h&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>particle {
+<a name="l00033"></a><a class="code" href="classparticle_1_1QuadModel.html">00033</a>     <span class="keyword">class </span><a class="code" href="classparticle_1_1QuadModel.html">QuadModel</a> {
+<a name="l00034"></a>00034         <span class="keyword">public</span>:
+<a name="l00039"></a><a class="code" href="classparticle_1_1QuadModel.html#a66c6196aa8842880556b1de2cb21c7d3">00039</a>             <span class="keyword">typedef</span> gl::Quads <a class="code" href="classparticle_1_1QuadModel.html#a66c6196aa8842880556b1de2cb21c7d3">glType</a>;
+<a name="l00040"></a>00040 
+<a name="l00050"></a>00050             <span class="keyword">template</span>&lt;<span class="keyword">class</span> Particle&gt;
+<a name="l00051"></a><a class="code" href="classparticle_1_1QuadModel.html#a49ca8c7695163913ef1eed5087334dba">00051</a>             <span class="keywordtype">void</span> <a class="code" href="classparticle_1_1QuadModel.html#a49ca8c7695163913ef1eed5087334dba">operator() </a>(<span class="keyword">const</span> <a class="code" href="classparticle_1_1Particle.html">Particle</a>&amp; particle)<span class="keyword"> const </span>{
+<a name="l00052"></a>00052                 <span class="keywordtype">float</span> x = particle.<a class="code" href="classparticle_1_1Particle.html#a32baaa17473630f897a45bdbb8b3e67e">position</a> ()[0];
+<a name="l00053"></a>00053                 <span class="keywordtype">float</span> y = particle.<a class="code" href="classparticle_1_1Particle.html#a32baaa17473630f897a45bdbb8b3e67e">position</a> ()[1];
+<a name="l00054"></a>00054                 <span class="keywordtype">float</span> z = particle.<a class="code" href="classparticle_1_1Particle.html#a32baaa17473630f897a45bdbb8b3e67e">position</a> ()[2];
+<a name="l00055"></a>00055                 <span class="keywordtype">float</span> size = 1.0f;
+<a name="l00056"></a>00056  
+<a name="l00057"></a>00057                 <span class="comment">//glColor3ub(150, 90, 50);</span>
+<a name="l00058"></a>00058  
+<a name="l00059"></a>00059                 glColor3f (1.0f, 0.0f, 0.0f);
+<a name="l00060"></a>00060  
+<a name="l00061"></a>00061                 <span class="comment">//glTexCoord2f (0.0f, 1.0); </span>
+<a name="l00062"></a>00062                 glVertex3f (x + size, y + size, z);
+<a name="l00063"></a>00063  
+<a name="l00064"></a>00064                 <span class="comment">//glTexCoord2f (0.0f, 0.0); </span>
+<a name="l00065"></a>00065                 glVertex3f (x - size, y + size, z);
+<a name="l00066"></a>00066  
+<a name="l00067"></a>00067                 <span class="comment">//glTexCoord2f (1.0f, 0.0); </span>
+<a name="l00068"></a>00068                 glVertex3f (x - size, y - size, z);
+<a name="l00069"></a>00069  
+<a name="l00070"></a>00070                 <span class="comment">//glTexCoord2f (1.0f, 1.0); </span>
+<a name="l00071"></a>00071                 glVertex3f (x + size, y - size, z);
+<a name="l00072"></a>00072             };
+<a name="l00073"></a>00073     }; <span class="comment">//QuadModel</span>
+<a name="l00074"></a>00074 }; <span class="comment">//particle</span>
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 <span class="preprocessor">#endif //PARTICLE_QUADMODEL_H</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span>
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+      <li class="navelem"><a class="el" href="QuadModel_8h.html">QuadModel.h</a>      </li>
       <li class="footer">Generated on Tue Aug 23 2011 16:52:12 for Particles by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>

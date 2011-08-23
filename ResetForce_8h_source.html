@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Particles: Main Page</title>
+<title>Particles: ResetForce.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,10 +35,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,6 +57,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+    </ul>
+  </div>
 </div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -68,18 +73,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('index.html','');
+  initNavTree('ResetForce_8h.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<h1>Particles Documentation</h1>  </div>
+<h1>ResetForce.h</h1>  </div>
 </div>
 <div class="contents">
-</div>
+<a href="ResetForce_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00024"></a>00024 <span class="preprocessor">#ifndef PARTICLE_RESETFORCE_H</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define PARTICLE_RESETFORCE_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;particles/common.h&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;particles/Action.h&quot;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="keyword">namespace </span>particle {
+<a name="l00036"></a>00036     <span class="keyword">template</span>&lt;<span class="keyword">class</span> Particle&gt;
+<a name="l00037"></a><a class="code" href="classparticle_1_1ResetForce.html">00037</a>     <span class="keyword">class </span><a class="code" href="classparticle_1_1ResetForce.html">ResetForce</a> : <span class="keyword">public</span> <a class="code" href="classparticle_1_1Action.html">Action</a>&lt;Particle&gt; {
+<a name="l00038"></a>00038         <span class="keyword">public</span>:
+<a name="l00042"></a><a class="code" href="classparticle_1_1ResetForce.html#a58eb5b24731d98f1c1e6a0d854129972">00042</a>             <a class="code" href="classparticle_1_1ResetForce.html#a58eb5b24731d98f1c1e6a0d854129972">ResetForce</a> ()
+<a name="l00043"></a>00043               : <a class="code" href="classparticle_1_1Action.html">Action</a>&lt;<a class="code" href="classparticle_1_1Particle.html">Particle</a>&gt; () {};
+<a name="l00044"></a>00044 
+<a name="l00052"></a><a class="code" href="classparticle_1_1ResetForce.html#a9336f0955511d162b96ac3b63f14c823">00052</a>             <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classparticle_1_1ResetForce.html#a9336f0955511d162b96ac3b63f14c823">operator() </a>(<a class="code" href="classparticle_1_1Particle.html">Particle</a>&amp; particle) {
+<a name="l00053"></a>00053                 particle.<a class="code" href="classparticle_1_1Particle.html#a86133589440e5b59e8ba29faa1594389">force</a> () = <a class="code" href="namespaceparticle.html#a331acbf7eef0d9a041dca27681808c73">make_Vector</a> (0.0f, 0.0f, 0.0f);
+<a name="l00054"></a>00054             };
+<a name="l00055"></a>00055     }; <span class="comment">//ResetForce</span>
+<a name="l00056"></a>00056 }; <span class="comment">//particle</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="preprocessor">#endif //PARTICLE_RESETFORCE_H</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+      <li class="navelem"><a class="el" href="ResetForce_8h.html">ResetForce.h</a>      </li>
       <li class="footer">Generated on Tue Aug 23 2011 16:52:12 for Particles by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>

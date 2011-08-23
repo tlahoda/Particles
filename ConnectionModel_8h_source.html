@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Particles: Main Page</title>
+<title>Particles: ConnectionModel.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,10 +35,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,6 +57,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+    </ul>
+  </div>
 </div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -68,18 +73,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('index.html','');
+  initNavTree('ConnectionModel_8h.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<h1>Particles Documentation</h1>  </div>
+<h1>ConnectionModel.h</h1>  </div>
 </div>
 <div class="contents">
-</div>
+<a href="ConnectionModel_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00024"></a>00024 <span class="preprocessor">#ifndef PARTICLE_CONNECTIONMODEL_H</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define PARTICLE_CONNECTIONMODEL_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;gl/Primitive.h&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>particle {
+<a name="l00035"></a><a class="code" href="classparticle_1_1ConnectionModel.html">00035</a>     <span class="keyword">class </span><a class="code" href="classparticle_1_1ConnectionModel.html">ConnectionModel</a> {
+<a name="l00036"></a>00036         <span class="keyword">public</span>:
+<a name="l00041"></a><a class="code" href="classparticle_1_1ConnectionModel.html#a35dc412690e4e5722229639c8848e640">00041</a>             <span class="keyword">typedef</span> gl::Lines <a class="code" href="classparticle_1_1ConnectionModel.html#a35dc412690e4e5722229639c8848e640">glType</a>;
+<a name="l00042"></a>00042 
+<a name="l00052"></a>00052             <span class="keyword">template</span>&lt;<span class="keyword">class</span> Particle&gt;
+<a name="l00053"></a><a class="code" href="classparticle_1_1ConnectionModel.html#a860315000305f9c8ce969ab5b9f8e06a">00053</a>             <span class="keywordtype">void</span> <a class="code" href="classparticle_1_1ConnectionModel.html#a860315000305f9c8ce969ab5b9f8e06a">operator() </a>(<span class="keyword">const</span> <a class="code" href="classparticle_1_1Particle.html">Particle</a>&amp; particle)<span class="keyword"> const </span>{
+<a name="l00054"></a>00054                 glColor3f (1.0f, 0.0f, 0.0f);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056                 glVertex3f (constraint-&gt;connection ().first ().position ()[0],
+<a name="l00057"></a>00057                             constraint-&gt;connection ().first ().position ()[1],
+<a name="l00058"></a>00058                             constraint-&gt;connection ().first ().position ()[2]);
+<a name="l00059"></a>00059                 
+<a name="l00060"></a>00060                 glVertex3f (constraint-&gt;connection ().second ().position ()[0],
+<a name="l00061"></a>00061                             constraint-&gt;connection ().second ().position ()[1],
+<a name="l00062"></a>00062                             constraint-&gt;connection ().second ().position ()[2]);
+<a name="l00063"></a>00063             };
+<a name="l00064"></a>00064     }; <span class="comment">//ConnectionModel</span>
+<a name="l00065"></a>00065 }; <span class="comment">//particle</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="preprocessor">#endif //PARTICLE_CONNECTIONMODEL_H</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+      <li class="navelem"><a class="el" href="ConnectionModel_8h.html">ConnectionModel.h</a>      </li>
       <li class="footer">Generated on Tue Aug 23 2011 16:52:12 for Particles by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
